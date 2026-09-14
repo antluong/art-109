@@ -34,6 +34,11 @@ header {
 header h1 {
     font-size: 3rem;
 }
+nav { position:absolute; top: 2rem; right: 2rem; }
+
+nav a {text-decoration:none; color:#000; 
+    display:inline-block; margin-left: 2rem; }
+
 main { max-width: 60rem; margin: 2rem auto;}
 
 .about-section, .portfolio-section, .contact-section {margin-bottom: 5rem;}
@@ -46,11 +51,12 @@ main { max-width: 60rem; margin: 2rem auto;}
 background-color: #d0e0d9fb;
 padding: 2rem;
 text-align: justify;
+ border: 3px solid #000;
 border-radius: 1rem;
-box-shadow: 10px 10px 5px 12px rgb(26, 78, 35);
+box-shadow: 10px 10px 5px 12px rgb(29, 54, 32);
 }
 .portfolio-item img {max-width: 100%; margin: 0 auto; display: block;
-border-radius: 1rem;
+border-radius: 1rem; 
 }
 .portfolio-item h3 {margin: 1rem 0;}
 .portfolio-item p {font-size: 1.2rem;}
@@ -58,5 +64,11 @@ border-radius: 1rem;
 
 
 
-.about-section {background-color: #dde2dcfb; text-align: justify }
+.about-section { padding: 3rem;
+    margin-bottom: 2rem; 
+    background-color: #dde2dcfb; text-align: center; }
 /* .portfolio-section {background-color: #688168fb;} */
+
+footer {background-color: #000500fb; color: #eee; padding: 1rem; text-align: right;}
+
+footer p {font-size: 1.2rem;}
