@@ -1,6 +1,62 @@
-body{
-    background-color: #0a3606fb;
+/* css resets */
+
+
+* {
+    margin: 0;
+    padding: 0;
 }
-header{
-    padding: 80px; backgeround-color: #73ec68fb;
+
+/* respect user font size preferences  */
+html {
+    font-size: 100%;
 }
+
+
+/* General css */
+
+body {
+    background-color: #154d1ffb;
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+header {
+    padding: 6rem;
+    margin-bottom: 3rem;
+    /* background-color: #0a3606fb; */
+    background: #2A7B9B;
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    border-bottom: #080808fb solid 2px;
+    /* text-align: center; */
+}
+
+header h1 {
+    font-size: 3rem;
+}
+main { max-width: 60rem; margin: 2rem auto;}
+
+.about-section, .portfolio-section, .contact-section {margin-bottom: 5rem;}
+
+.about-content, .portfolio-content, .contact-content {max-width: 60rem; margin: 2rem auto;}
+
+
+
+.portfolio-item {margin-bottom: 5rem;
+background-color: #d0e0d9fb;
+padding: 2rem;
+text-align: justify;
+border-radius: 1rem;
+box-shadow: 10px 10px 5px 12px rgb(26, 78, 35);
+}
+.portfolio-item img {max-width: 100%; margin: 0 auto; display: block;
+border-radius: 1rem;
+}
+.portfolio-item h3 {margin: 1rem 0;}
+.portfolio-item p {font-size: 1.2rem;}
+
+
+
+
+.about-section {background-color: #dde2dcfb; text-align: justify }
+/* .portfolio-section {background-color: #688168fb;} */
