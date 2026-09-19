@@ -1,8 +1,37 @@
 
 
 
+body{
+    animation: change-color 10s infinite alternate;
+  
+}
+
+@keyframes change-color {
+  0% {background-color: antiquewhite;}
+  50% {background-color: lightblue;}
+  100% {background-color: rgb(189, 189, 153);}
+}
+
+/* The element to apply the animation to
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: color-animation;
+  animation-duration: 4s;
+} */
+
+
 .title{
-    font-family:'Courier New', Courier, monospace
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    margin-top: 80px auto;
+     animation: skew 3s infinite alternate;
+}
+
+@keyframes skew {
+  0% {transform: skew(0deg, 0deg);}
+  100% {transform: skew(30deg, 20deg);}
 }
 
 .square{
@@ -38,4 +67,16 @@
     background-color: rgb(252, 215, 4);
     color: black;
     transform: scale(1.5);
+}
+
+.loading{
+    background-color: rgb(19, 78, 32);
+    animation: stretch 5s 3 normal;
+    width: 80vw;
+}
+
+@keyframes stretch {
+  0% {width: 100px;}
+  100% {width: 80vw;
+  }
 }
