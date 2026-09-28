@@ -24,10 +24,24 @@
 
 /* css resets */
 
+/* Change box-sizing default to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
 
 * {
     margin: 0;
     padding: 0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
 }
 
 /* respect user font size preferences  */
@@ -77,9 +91,13 @@ nav a:hover {
     margin: 5rem auto;
 }
 
-.about-content,
-.portfolio-content h2,
-.contact-content h2 {}
+.about-content, .portfolio-content h2, .contact-content h2 {margin: 2rem 0;}
+
+.portfolio-item { padding: 1rem;
+    background-color: var(--font);
+    color: var(--bg-color-1);
+
+}
 
 footer {
     padding: 1rem 2rem;
@@ -102,9 +120,12 @@ footer img{
 .flex-container-grid {
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
 
 }
 
 .flex-item-grid {
-    flex: 1 1 25%;
+    flex: 1 0 17rem;
+
 }
