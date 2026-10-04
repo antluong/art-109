@@ -76,13 +76,55 @@ text-shadow: -4px 4px rgba(179,179,179,.4), -3px 3px rgba(153,153,153,.2),
 
    nav a {text-decoration: none;
 color: var(--font);
-margin: 0 1rem;
-transition: all .5s ease;
+/* margin: 0 1rem;
+transition: all .5s ease; */
 }
 
 nav a:hover {
     color: var(--accent-2);
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.hambuger {
+    display: none;
+    /* background-color: none;
+    border: none; */
+    /* color: var(--font); */
+    font-size: 1rem;
+}
+
+.nav-menu{
+    list-style: none;
+    display:flex;
+    gap: 1rem;
+
+}
+
+@media (max-width: 750px){
+    .hambuger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+    header {
+    padding: 1.5rem 2rem;
+}
+
+}
+
+main {margin: 0;}
+@media (max-width: 1146px){
+
+main {margin: 2rem;} }
+
+@media (max-width: 750px) {main {margin: 1rem;} }
 
 .about-content,
 .portfolio-content,
@@ -91,13 +133,24 @@ nav a:hover {
     margin: 5rem auto;
 }
 
-.about-content, .portfolio-content h2, .contact-content h2 {margin: 2rem 0;}
+.about-content, .portfolio-content h2, .contact-content h2 {margin: 2rem 2;}
 
 .portfolio-item { padding: 1rem;
     background-color: var(--font);
     color: var(--bg-color-1);
+    border-radius: .5rem;
 
 }
+
+.portfolio-item p {
+    font-size: 1.25rem;
+}
+
+.portfolio-item h3 {
+    font-size: 1.5rem;
+}
+
+.portfolio-item { boder-radius: .5rem; }
 
 footer {
     padding: 1rem 2rem;
@@ -122,6 +175,7 @@ footer img{
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    align-items: stretch;
 
 }
 
