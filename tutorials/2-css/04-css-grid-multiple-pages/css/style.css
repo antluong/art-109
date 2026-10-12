@@ -1,0 +1,201 @@
+/* color palette 
+
+.poiret-one-regular {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}*/
+
+
+:root {
+    --bg-color-1: #111;
+    --bg-color-2: #0a3606fb;
+    --font: #f4f5f2;
+    --accent-1: #f4f5f2;
+    --accent-2: #2A7B9B;
+    --dark: #000500fb;
+}
+
+
+
+
+
+
+
+/* css resets */
+
+/* Change box-sizing default to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* respect user font size preferences  */
+
+html {
+    font-size: 100%;
+}
+
+
+
+/* General css */
+
+body {
+    background-color: var(--bg-color-1);
+    color: var(--font);
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+header {
+    padding: 5rem 2rem;
+}
+
+header h1 { 
+text-shadow: -4px 4px rgba(179,179,179,.4), -3px 3px rgba(153,153,153,.2),
+ -2px 2px rgba(179,179,179,.2), -1px 1px rgba(179,179,179,.2),
+  0px 0px rgba(128,128,128,.5), 1px -1px rgba(77,77,77,.6), 2px -2px
+   rgba(77,77,77,.7), 3px -3px rgba(82,82,82,.8), 4px -4px rgba(77,77,77,.9), 5px -5px rgba(77,77,77,1);}
+
+
+   nav a {text-decoration: none;
+color: var(--font);
+/* margin: 0 1rem;
+transition: all .5s ease; */
+}
+
+nav a:hover {
+    color: var(--accent-2);
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.hambuger {
+    display: none;
+    /* background-color: none;
+    border: none; */
+    /* color: var(--font); */
+    font-size: 1rem;
+}
+
+.nav-menu{
+    list-style: none;
+    display:flex;
+    gap: 1rem;
+
+}
+
+@media (max-width: 750px){
+    .hambuger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+    header {
+    padding: 1.5rem 2rem;
+}
+
+}
+
+main {margin: 0;}
+@media (max-width: 1146px){
+
+main {margin: 2rem;} }
+
+@media (max-width: 750px) {main {margin: 1rem;} }
+
+.about-content,
+.portfolio-content,
+.contact-content, .project-content {
+    max-width: 70rem;
+    margin: 5rem auto;
+}
+
+.about-content, .portfolio-content h2, .contact-content h2, .project-content h2 {margin: 2rem 2;}
+
+/* Project content is for project pages */
+
+.project-content {
+    text-align: justify;
+   
+}
+
+project-content img {
+     margin: 0 auto;
+    padding: 2rem; }
+
+.portfolio-item { padding: 1rem;
+    background-color: var(--font);
+    color: var(--bg-color-1);
+    border-radius: .5rem;
+
+}
+
+.portfolio-item a {
+    text-decoration: none;
+    color: var(--bg-color-1);
+}
+
+.portfolio-item p {
+    font-size: 1.25rem;
+}
+
+.portfolio-item h3 {
+    font-size: 1.5rem;
+}
+
+.portfolio-item { boder-radius: .5rem; }
+
+footer {
+    padding: 1rem 2rem;
+}
+
+footer img{
+    display: inline;
+    max-width: 3rem;
+    margin: 0 .5rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~ flex styling ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-container-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: stretch;
+
+}
+
+.flex-item-grid {
+    flex: 1 0 17rem;
+
+}
