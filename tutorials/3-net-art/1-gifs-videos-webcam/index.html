@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎞️</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/Q7qdOq_kLyM?si=DOIiGstIDZ1GSoR&autoplay=1&mute=1&loop=1&playlist=Q7qdOq_kLyM"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <img src="media/kissing-dog.gif" alt="kissing dog" class="kissing-dog">
+
+        <div class="kissing-dog-happy">
+            <p>Kissing dog, happy dog, kissing and happy,Kissing dog, happy dog, kissing and happy,Kissing dog, happy
+                dog, kissing and happy,Kissing dog, happy dog, kissing and happy,Kissing dog, happy dog, kissing and
+                happy,Kissing dog, happy dog, kissing and happy,Kissing dog, happy dog, kissing and happy,Kissing dog,
+                happy dog, kissing and happy, </p>
+            <img src="media/dancing-dog.gif" alt="dancing dog" class="dancing-dog">
+        </div>
+        <!-- autoplay video -->
+        <video width="520" height="400" autoplay muted loop>
+            <source src="media/funny-dog.mp4" type="video/mp4">
+        </video>
+        <!-- hover videos -->
+        <video class="hover-video"width="520" height="400" >
+            <source src="media/funny-dog.mp4" type="video/mp4">
+        </video>
+        <video class="hover-video"width="520" height="400" >
+            <source src="media/funny-dog.mp4" type="video/mp4">
+        </video>
+        <!-- click on play video -->
+         
+          <video class="click-video"width="520" height="400" >
+            <source src="media/funny-dog.mp4" type="video/mp4">
+        </video>
+
+        <video id="webcamVideo" autoplay playsinline></video>
+    </main>
+    <script src="js/video.js"></script>
+    <script src="js/webcam.js"></script>
+</body>
+
+</html>

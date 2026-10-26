@@ -1,0 +1,19 @@
+
+.kissing-dog {
+    position: absolute;
+    top: 300px;
+    left: 30px;
+}
+
+.kissing-dog-happy {
+    position: relative;
+   margin: 50px auto;
+   max-width: 600px;
+   font-size: 3rem;
+}
+
+.dancing-dog {
+    position: absolute;
+    top: 600px;
+    left: 40px;
+}
