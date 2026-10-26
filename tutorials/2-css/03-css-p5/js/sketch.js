@@ -7,7 +7,7 @@ let easing = 0.05;
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0);
-    canvas.style("z-index", -2);
+    // canvas.style("z-index", -2);
    
 }
 
