@@ -126,3 +126,62 @@ body {
     transition: none;
   }
 }
+
+
+/* Tree background fades in first */
+.experience {
+  animation: pageFadeIn 3s ease-in-out both;
+}
+
+/* Words appear after the tree */
+.words {
+  animation: wordsFadeIn 2s ease-in-out 2s both;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes wordsFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.warning-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+  min-width: 280px;
+  max-width: 80%;
+  padding: 18px 28px;
+
+  background: rgba(0, 0, 0, 0.82);
+  border: 1px solid rgba(255, 210, 120, 0.35);
+  box-shadow:
+    0 0 25px rgba(0, 0, 0, 0.6),
+    0 0 18px rgba(255, 170, 70, 0.08);
+
+  color: #ffe2a0;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.4s ease-in-out;
+}
+
+.warning-box.show {
+  opacity: 1;
+  visibility: visible;
+}
+

@@ -52,7 +52,7 @@ body {
   z-index: 2;
   margin: 0;
   padding: 24px;
-  animation: fadeIn 5s ease-in;
+  animation: fadeIn 2s ease-in;
 }
 
 /* Clickable entrance */
@@ -71,6 +71,12 @@ body {
 
   transition: color 0.5s, text-shadow 0.5s;
 }
+#rotatingText {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
 
 /* Hover effect */
 .entrance:hover {

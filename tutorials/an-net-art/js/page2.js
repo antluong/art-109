@@ -263,3 +263,30 @@ window.addEventListener("resize", () => {
 });
 
 animateParticles();
+
+
+// Warning message every 5 seconds
+const warningBox = document.getElementById("warningbox");
+
+const warningMessages = [
+  "Time is slipping away...",
+  "How much time do you have left?",
+  "Can you hold on before it's gone?"
+];
+
+let warningIndex = 0;
+
+const warningInterval = setInterval(() => {
+  warningBox.textContent = warningMessages[warningIndex];
+  warningBox.classList.add("show");
+
+  setTimeout(() => {
+    warningBox.classList.remove("show");
+  }, 1500);
+
+  warningIndex++;
+
+  if (warningIndex >= warningMessages.length) {
+    clearInterval(warningInterval);
+  }
+}, 5000);
