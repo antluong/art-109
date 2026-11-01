@@ -1,0 +1,113 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: Georgia, serif;
+}
+
+/* Main scene */
+.p1 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Tunnel background */
+.tunnel {
+  position: absolute;
+  inset: -3%;
+
+  background-image: url("../images/tunnel.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  animation: autoWalking 20s linear forwards;
+}
+
+/* Dark overlay */
+.p1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+/* Main title */
+.title {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 24px;
+  animation: fadeIn 5s ease-in;
+}
+
+/* Clickable entrance */
+.entrance {
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: normal;
+  color: #f3e5d1;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
+  text-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+
+  transition: color 0.5s, text-shadow 0.5s;
+}
+
+/* Hover effect */
+.entrance:hover {
+  color: #fff2d9;
+  text-shadow: 0 0 25px rgba(255, 200, 130, 0.7);
+}
+
+.entrance:focus-visible {
+  outline: 2px solid #f3e5d1;
+  box-shadow: 0 0 25px rgba(255, 200, 130, 0.7);
+  outline-offset: 12px;
+}
+
+/* Animations */
+@keyframes autoWalking {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(2);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .tunnel,
+  .title {
+    animation: none;
+  }
+}
