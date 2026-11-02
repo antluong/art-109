@@ -26,12 +26,23 @@
             <button class="memory">Status</button>
         </section>
 
+        <!-- Background Music -->
+        <audio id="backgroundmusic" loop>
+            <source src="audio/pressure.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Warning Sound Effect -->
+        <audio id="warningsound">
+            <source src="audio/bell.mp3" type="audio/mpeg">
+        </audio>
+
+
         <!-- Golden dust particles -->
         <canvas id="particleCanvas"></canvas>
 
         <!-- Time warning -->
         <p id="warningbox" class="warning-box">
-             Time is slipping away...
+            Time is slipping away...
         </p>
 
         <p id="ending" class="ending">

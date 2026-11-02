@@ -11,6 +11,29 @@ const particles = [];
 
 let disappeared = 0;
 
+
+// AUDIO SETTINGS
+const page2Music = document.getElementById("backgroundmusic");
+const warningSound = document.getElementById("warningsound");
+
+// Volume: 0 = silent, 1 = maximum
+page2Music.volume = 0.25;
+warningSound.volume = 0.8;
+
+// Start background music
+page2Music.play().catch(() => {
+  console.log("Background autoplay blocked.");
+});
+
+// If autoplay is blocked, retry on interaction
+document.addEventListener("pointerdown", () => {
+  if (page2Music.paused) {
+    page2Music.play().catch(console.error);
+  }
+}, { once: true });
+
+
+
 // 1. Set up Canvas
 function resizeCanvas() {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -161,9 +184,9 @@ function animateParticles() {
 }
 
 
-// 5. Automatic fading over 20 seconds
+// 5. Automatic fading over 30 seconds
 
-const totalDuration = 20000; // 20 seconds
+const totalDuration = 30000; // 30 seconds
 const startTime = performance.now();
 
 let finished = false;
@@ -235,7 +258,7 @@ function autoFade(currentTime) {
     }
   });
 
-  // Show ending after 20 seconds
+  // Show ending after 30 seconds
   if (progress >= 1) {
     finished = true;
 
@@ -277,12 +300,23 @@ const warningMessages = [
 let warningIndex = 0;
 
 const warningInterval = setInterval(() => {
+
+  //change warning text 
   warningBox.textContent = warningMessages[warningIndex];
+
+  //show warning box
   warningBox.classList.add("show");
 
+  //play bell sound 
+  warningSound.pause();
+  warningSound.currentTime = 0;
+  warningSound.play().catch(console.error);
+
+
+  //hide warning after 2.5s
   setTimeout(() => {
     warningBox.classList.remove("show");
-  }, 1500);
+  }, 2500);
 
   warningIndex++;
 
@@ -290,3 +324,6 @@ const warningInterval = setInterval(() => {
     clearInterval(warningInterval);
   }
 }, 5000);
+
+
+
