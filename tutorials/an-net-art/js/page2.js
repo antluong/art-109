@@ -6,7 +6,7 @@ const area = document.querySelector(".words");
 const canvas = document.getElementById("particleCanvas");
 const ctx = canvas.getContext("2d");
 
-const maxClicks = 3;
+const maxClicks = 4;
 const particles = [];
 
 let disappeared = 0;
@@ -16,9 +16,14 @@ let disappeared = 0;
 const page2Music = document.getElementById("backgroundmusic");
 const warningSound = document.getElementById("warningsound");
 
+const endingSound = document.getElementById("endingsound");
+
+
+
 // Volume: 0 = silent, 1 = maximum
 page2Music.volume = 0.25;
 warningSound.volume = 0.8;
+endingSound.volume = 0.9;
 
 // Start background music
 page2Music.play().catch(() => {
@@ -212,7 +217,46 @@ memories.forEach((word) => {
   });
 });
 
+
+
 // 6. Automatically fade all words
+
+function animateEndingText() {
+  const fullText = "If nothing lasts..., what matters?";
+  let index = 0;
+
+  ending.textContent = "";
+
+  const typing = setInterval(() => {
+    ending.textContent += fullText[index];
+    index++;
+
+    if (index >= fullText.length) {
+      clearInterval(typing);
+    }
+  }, 200);
+}
+
+/* FUNCTION 1: Play ending bells */
+// function playEndingBells() {
+//   let bellCount = 0;
+
+//   function ringBell() {
+//     endingSound.pause();
+//     endingSound.currentTime = 0;
+//     endingSound.play().catch(console.error);
+
+//     bellCount++;
+
+//     if (bellCount < 3) {
+//       setTimeout(ringBell, 3500);
+//     }
+//   }
+
+//   ringBell();
+// } 
+/* FUNCTION 2: Automatically fade words */
+
 function autoFade(currentTime) {
   if (finished) return;
 
@@ -224,15 +268,14 @@ function autoFade(currentTime) {
     1
   );
 
+  // Fade all memory words
   memories.forEach((word) => {
-    // Natural fading over time
+
     const timeBrightness = 1 - progress;
 
-    // Additional fading from clicks
     const clicks = clickCounts.get(word);
     const clickBrightness = 1 - clicks / maxClicks;
 
-    // Use the lower brightness
     const brightness = Math.max(
       0,
       Math.min(timeBrightness, clickBrightness)
@@ -258,21 +301,42 @@ function autoFade(currentTime) {
     }
   });
 
-  // Show ending after 30 seconds
+  // Ending after 30 seconds
   if (progress >= 1) {
     finished = true;
 
     memories.forEach((word) => {
       word.style.opacity = 0;
       word.disabled = true;
+      word.style.pointerEvents = "none";
     });
 
+    // Stop background music
+    page2Music.pause();
+
+    // Show ending message
     ending.classList.add("visible");
+
+    // Typing animation
+    animateEndingText();
+
+       // Play the ending sound
+    endingSound.currentTime = 0;
+    endingSound.play().catch(console.error);
+
     return;
   }
 
+  // Continue animation
   requestAnimationFrame(autoFade);
 }
+
+
+// Return to Page 1 when ending is clicked
+ending.addEventListener("click", () => {
+  window.location.href = "index.html";
+});
+
 
 // 7. Start everything
 window.addEventListener("load", () => {
